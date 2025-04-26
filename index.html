@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Please Wait</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      font-size: 2rem;
+    }
+    #timer {
+      margin-top: 20px;
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    Please wait...
+    <div id="timer">4</div>
+  </div>
+
+  <script>
+    let timeLeft = 4;
+    const timer = document.getElementById('timer');
+
+    const countdown = setInterval(() => {
+      timeLeft--;
+      timer.textContent = timeLeft;
+      if (timeLeft <= 0) {
+        clearInterval(countdown);
+        window.location.href = "https://example.com"; // Change this link if you want
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
